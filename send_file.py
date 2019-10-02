@@ -25,7 +25,7 @@ s = socket.socket()
 s.connect((addr,port))
 f = open (file_name, "rb")
 
-encoded_s = bytes(file_name, 'utf-8')
+encoded_s = bytes(file_name, 'utf-8') # send name of file
 
 kb = bytearray()
 

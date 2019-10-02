@@ -49,14 +49,14 @@ class ClientListener(Thread):
             
             print('recieving: ', file_name)
 
-            if os.path.exists(file_name): # check if file already exists
+            if os.path.exists('uploaded_files/' + file_name): # check if file already exists
                 copy_number = 1
 
                 ext = file_name[file_name.rfind('.') + 1:]
                 file_name = file_name[:file_name.rfind('.')]
                 
                 file_name += '_copy_' + str(copy_number)
-                while os.path.exists(file_name + '.' + ext): # try name by name
+                while os.path.exists('uploaded_files/' + file_name + '.' + ext): # try name by name
                     file_name = file_name[:-len(str(copy_number))]
                     copy_number += 1
                     file_name += str(copy_number)
